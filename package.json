@@ -1,0 +1,35 @@
+{
+  "name": "flutter",
+  "version": "1.0.0",
+  "description": "flutter.js",
+  "main": "flutter.js",
+  "scripts": {
+    "dist": "rimraf dist | webpack --config webpack.config.js",
+    "demo": "webpack-dev-server --config webpack.demo.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shoheiono/flutter.git"
+  },
+  "author": "shohei ono",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shoheiono/flutter/issues"
+  },
+  "homepage": "https://github.com/shoheiono/flutter#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "copy-webpack-plugin": "^4.2.3",
+    "html-loader": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "ts-loader": "^3.1.1",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "uglifyjs-webpack-plugin": "^1.1.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "dependencies": {}
+}
