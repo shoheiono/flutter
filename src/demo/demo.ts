@@ -3,7 +3,8 @@ import Flutter from 'flutter';
 namespace Demo {
     let flutter: Flutter = null;
     export function initialize(): void {
-        flutter = Flutter.init();
+        const canvas = document.getElementById('demoCanvas') as HTMLCanvasElement;
+        flutter = Flutter.init(canvas);
     }
 }
 

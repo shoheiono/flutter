@@ -1,3 +1,4 @@
+import * as flutterImage from 'demo/flutter.png';
 import * as model from 'model';
 
 export default class Flutter {
@@ -16,17 +17,50 @@ export default class Flutter {
         if (canvas instanceof HTMLCanvasElement) {
             _canvas = canvas;
         } else {
-            let _canvas = document.getElementById(canvas) as HTMLCanvasElement;
-            if (!_canvas) {
+            // tslint:disable-next-line:no-shadowed-variable
+            let _canvas = document.getElementById(canvas);
+            if (_canvas === null) {
                 _canvas = document.createElement('canvas');
                 _canvas.id = canvas;
-                document.appendChild<HTMLCanvasElement>(_canvas);
+                document.body.appendChild(_canvas);
             }
         }
+
         return new Flutter(_canvas, options);
     }
 
+    private ctx: CanvasRenderingContext2D;
+    private width: number = 0;
+    private height: number = 0;
+    private x: number = 0;
+    private image: HTMLImageElement;
+
     private constructor(canvas: HTMLCanvasElement, options: model.IFlutterOptions) {
-        console.log(canvas);
+        const renderMS = 10;
+        this.ctx = canvas.getContext('2d');
+        this.width = canvas.width;
+        this.height = canvas.height;
+
+        this.image = new Image();
+        this.image.src = flutterImage;
+
+        setInterval(this.render.bind(this), renderMS);
+    }
+
+    private render() {
+        // Canvas全体をクリア
+        this.ctx.clearRect(0, 0, this.width, this.height);
+
+        // 要素を描画する
+        // this.ctx.beginPath();
+        // this.ctx.strokeRect(this.x, 0, 40, 40);
+
+        this.ctx.drawImage(this.image, this.x, 0);
+
+        if (this.x > this.width) {
+            this.x = 0;
+        } else {
+            this.x += 1;
+        }
     }
 }
