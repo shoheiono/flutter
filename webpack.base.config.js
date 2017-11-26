@@ -28,7 +28,7 @@ module.exports = (env) => {
 
     if (env === 'demo') {
         devtool = 'source-map';
-        distPath = path.join(__dirname, 'demo');
+        distPath = path.resolve(__dirname, 'demo');
         entry.demo = 'demo/demo.ts';
         uglifyJsOptions.sourceMap = true;
         copyWebpackPluginOptions.push({ from: 'demo/index.html' });
@@ -51,8 +51,8 @@ module.exports = (env) => {
             filename: '[name].js'
         },
         resolve: {
-            extensions: ['.js', '.ts', '.html'],
-            modules: ['src', 'node_modules']
+            extensions: ['.js', '.ts', '.html', '.png', '.jpg', '.gif'],
+            modules: ['src', 'dist', 'node_modules']
         },
         devServer: {
             contentBase: distPath,
@@ -86,6 +86,15 @@ module.exports = (env) => {
                     use: {
                         loader: 'html-loader',
                     }
+                },
+                {
+                    test: /\.(png|jpg|gif)$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {}
+                        }
+                    ]
                 }
             ]
         },
