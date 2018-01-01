@@ -26,18 +26,18 @@ module.exports = (env) => {
     };
     let copyWebpackPluginOptions = [];
 
-    if (env === 'demo') {
-        devtool = 'source-map';
-        distPath = path.resolve(__dirname, 'demo');
-        entry.demo = 'demo/demo.ts';
-        uglifyJsOptions.sourceMap = true;
-        copyWebpackPluginOptions.push({ from: 'demo/index.html' });
-    } else {
-        devtool = 'source-map';
-        distPath = path.join(__dirname, 'dist');
-        entry.flutter = 'flutter.ts';
-        tsExclude.unshift('demo');
-    }
+    // if (env === 'demo') {
+    //     devtool = 'source-map';
+    //     distPath = path.resolve(__dirname, 'demo');
+    //     entry.demo = 'demo/demo.ts';
+    //     uglifyJsOptions.sourceMap = true;
+    //     copyWebpackPluginOptions.push({ from: 'demo/index.html' });
+    // } else {
+    devtool = '';
+    distPath = path.join(__dirname, 'dist');
+    entry.flutter = 'flutter.ts';
+    tsExclude.unshift('demo');
+    // }
 
     plugins.push(new UglifyJsPlugin(uglifyJsOptions));
     plugins.push(new CopyWebpackPlugin(copyWebpackPluginOptions));
