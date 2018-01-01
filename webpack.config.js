@@ -12,7 +12,7 @@ const tsCompilerOptions = {
 module.exports = {
     devtool: 'source-map',
     context: path.join(__dirname, 'demo'),
-    entry: 'demo.ts',
+    entry: 'index.ts',
     output: {
         path: distPath,
         filename: 'bundle.js'
