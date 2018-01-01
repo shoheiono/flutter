@@ -9,7 +9,7 @@
         "charset": "utf8",
         "checkJs": false,
         "declaration": true,
-        "declarationDir": "",
+        "declarationDir": "dist",
         "diagnostics": false,
         "downlevelIteration": false,
         "emitBOM": false,
@@ -30,7 +30,7 @@
         ],
         "listEmittedFiles": false,
         "listFiles": false,
-        "mapRoot": "",
+        // "mapRoot": "",
         "maxNodeModuleJsDepth": 0,
         "module": "es2015",
         "moduleResolution": "classic",
@@ -61,8 +61,8 @@
         "rootDirs": [],
         "skipDefaultLibCheck": false,
         "skipLibCheck": false,
-        "sourceMap": true,
-        "sourceRoot": "",
+        "sourceMap": false,
+        // "sourceRoot": "",
         "strict": false,
         "strictFunctionTypes": false,
         "strictNullChecks": false,
@@ -76,6 +76,7 @@
         "watch": false
     },
     "exclude": [
+        "demo",
         "dist",
         "node_modules"
     ]
