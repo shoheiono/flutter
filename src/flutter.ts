@@ -1,4 +1,3 @@
-import * as flutterImage from 'demo/flutter.png';
 import * as model from 'model';
 
 export default class Flutter {
@@ -42,7 +41,7 @@ export default class Flutter {
         this.height = canvas.height;
 
         this.image = new Image();
-        this.image.src = flutterImage;
+        this.image.src = '';
 
         setInterval(this.render.bind(this), renderMS);
     }

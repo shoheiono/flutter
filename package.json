@@ -5,7 +5,8 @@
   "main": "flutter.js",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "demo": "yarn build && webpack-dev-server --config webpack.demo.config.js --watch"
+    "demo": "yarn build && rimraf distDemo && webpack",
+    "demo:server": "yarn build && rimraf distDemo && webpack-dev-server"
   },
   "repository": {
     "type": "git",

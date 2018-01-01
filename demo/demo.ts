@@ -1,4 +1,4 @@
-import Flutter from 'flutter';
+import Flutter from './../dist/src/flutter';
 
 namespace Demo {
     let flutter: Flutter = null;

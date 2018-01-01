@@ -78,6 +78,7 @@
     "exclude": [
         "demo",
         "dist",
+        "distDemo",
         "node_modules"
     ]
 }
